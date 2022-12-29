@@ -8,14 +8,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item nav-options-bg">
+        <li class="nav-item nav-options-bg nav-letter">
           <a class="nav-link nav-options" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item nav-options-bg">
+        <li class="nav-item nav-options-bg nav-letter">
           <a class="nav-link nav-options" [routerLink]="['/create-item']">Create item</a>
         </li>
-        <li class="nav-item nav-options-bg">
-          <a class="nav-link nav-options me-4" [routerLink]="['/inventory']">inventory</a>
+        <li class="nav-item nav-options-bg nav-letter">
+          <a class="nav-link nav-options me-4" [routerLink]="['/inventory']">Inventory</a>
         </li>
 
 
@@ -23,7 +23,7 @@
           <form class="d-flex m-start" #EbayForm="ngForm" (ngSubmit)="foundOnEbay(EbayForm)" novalidate>
             <input class="form-control me-2" type="search" placeholder="Search on ebay" name="findEbay" #findEbay="ngModel" [(ngModel)]="search.search" aria-label="Search">
           
-            <button class="btn btn-outline-secondary"  data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'" [disabled]="!search.search.length">Search</button>
+            <button class="btn btn-outline-secondary nav-letter"  data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'" [disabled]="!search.search.length">Search</button>
           </form>
         </li>
       </ul>
@@ -31,22 +31,21 @@
 
       <ul class="navbar-nav navbar-right">
 
-        <li class="nav-item setting" *ngIf="!identity.login">
-          <a class="nav-link pointer title" [routerLink]="['/register']">Register</a>
+        <li class="nav-item setting nav-letter" *ngIf="!identity.login">
+          <a class="nav-link pointer nav-letter" [routerLink]="['/register']">Register</a>
         </li>
-        <li class="nav-item pointer setting"  *ngIf="!identity.login">
-          <a class="nav-link title" [routerLink]="['/login']">Login</a>
+        <li class="nav-item pointer setting nav-letter"  *ngIf="!identity.login">
+          <a class="nav-link nav-letter" [routerLink]="['/login']">Login</a>
         </li>
 
-        <li class="nav-item dropdown setting"  *ngIf="identity.login">
-          <a class="nav-link title" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-            aria-expanded="false">
+        <li class="nav-item dropdown setting nav-letter"  *ngIf="identity.login">
+          <a class="nav-link nav-letter " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             {{identity.login.name + ' ' + identity.login.surname}}
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
-            <li><a class="dropdown-item" href="#" hidden>Setting</a></li>
-            <li><a class="dropdown-item" href="#" hidden>Profile</a></li>
+            <li><a class="dropdown-item nav-letter" href="#" hidden>Setting</a></li>
+            <li><a class="dropdown-item nav-letter" href="#" hidden>Profile</a></li>
             
             <li>
               <hr class="dropdown-divider">
@@ -122,12 +121,14 @@
                         
                           <label class="input-group-text mt-2" for="{{'descrip'+inc}}">Description</label>
                           <input type="text" name="descriptions" #descriptions [(ngModel)]="descriptions.value" class="form-control mt-2" id="{{'descriptions'+inc}}" required>
+                        
                         </div>
                         
                         <div class="form-group">
                         
                           <label class="input-group-text mt-2" for="{{'qty'+inc}}">Qty</label>
                           <input type="text" name="qty" #qty="" [(ngModel)]="qty.value" class="form-control mt-2" id="{{'qty'+inc}}" required>
+                        
                         </div>
                         
                         <div class="form-group" *ngIf="identity.login.role == 'ADMIN'">
