@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, DoCheck {
  }
 
   newItem(item: any) {
-  
+    console.log(item.form.value)
     this._productService.createItem(item.form.value, this.token).subscribe(
 
       response => {

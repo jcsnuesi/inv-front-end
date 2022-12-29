@@ -4,6 +4,7 @@ import {HttpClientModule} from '@angular/common/http'
 
 import { FormsModule } from '@angular/forms';
 import { routing, appRoutingProviders } from './routing';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 //Servicios
 import { UserGuard } from './components/services/user.guard';
@@ -16,6 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
+import { ModalEbayComponent } from './components/modal-ebay/modal-ebay.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { InventoryComponent } from './components/inventory/inventory.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    InventoryComponent
+    InventoryComponent,
+    ModalEbayComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    routing
+    routing,
+    AngularFileUploaderModule
   ],
   providers: [
     appRoutingProviders,

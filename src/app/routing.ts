@@ -8,6 +8,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { InventoryComponent } from "./components/inventory/inventory.component";
+import { ModalEbayComponent } from "./components/modal-ebay/modal-ebay.component";
 
 const AppRoutes: Routes = [
     
@@ -16,6 +17,7 @@ const AppRoutes: Routes = [
     { path: 'login',canActivate:[NoIdentityGuard], component: LoginComponent },
     { path: 'inventory',canActivate:[UserGuard] , component: InventoryComponent },
     { path: 'inventory/:page', canActivate: [UserGuard], component: InventoryComponent },
+    { path: 'create-item', canActivate: [UserGuard], component: ModalEbayComponent },
     { path: '**', component: HomeComponent }
 ];
 
