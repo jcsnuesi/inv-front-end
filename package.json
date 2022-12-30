@@ -47,7 +47,12 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+<<<<<<< HEAD
     "node": "17.3.1",
     "typescript": "~4.8.2"
+=======
+    "typescript": "~4.8.2",
+    "node":"17.3.1"
+>>>>>>> e45e924e5e22d956f9e6ed0d362f4ac229bbf313
   }
 }
